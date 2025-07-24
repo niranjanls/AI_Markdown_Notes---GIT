@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:5000/api/notes";
+const API_BASE = "/api/notes";
 
 export const saveNote = async(content) => {
     const res = await fetch(API_BASE,{
@@ -16,7 +16,7 @@ export const getNotes = async () => {
 };
 
 export const summarizeNote = async (content) => {
-    const res = await fetch("http://localhost:5000/api/ai", {
+    const res = await fetch("/api/ai", {
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({content}),
